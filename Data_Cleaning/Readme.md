@@ -1,4 +1,4 @@
-In real-world data science, we may not find an ideal data set. The soltion is to aggregate disparate data sources instead, or do a good amount of data cleaning.
+In real-world data science, we may not find an ideal data set. The solution is to aggregate disparate data sources instead, or do a good amount of data cleaning.
 
 FiveThirtyEight website became interested in answering some questions about Star Wars fans. In particular, they wondered: does the rest of America realize that “The Empire Strikes Back” is clearly the best of the Star Wars series?
 
@@ -18,10 +18,7 @@ There are several other columns containing answers to questions about the Star W
 
 First, we'll need to remove the invalid rows. For example, RespondentID is supposed to be a unique ID for each respondent, but it's blank in some rows. So we will have to remove any rows where RespondentID is NaN. I used the pandas.notnull()function to accomplish this.
 
-Take a look at the next two columns, which are:
-
-	1. Have you seen any of the 6 films in the Star Wars franchise?
-	2. Do you consider yourself to be a fan of the Star Wars film franchise
+Take a look at the next two columns, which are: 1. Have you seen any of the 6 films in the Star Wars franchise? 2. Do you consider yourself to be a fan of the Star Wars film franchise
 
 Both columns are currently string types, because the main values they contain are Yes and No. We can make the data a bit easier to analyze down the road by converting each column to a Boolean having only the values True, False, and NaN. Booleans are easier to work with because we can select the rows that are True or False without having to do a string comparison. I used the pandas.Series.map() method on series objects to perform the conversion.
 
@@ -36,8 +33,6 @@ After calling the map() method on a series, the column should only contain the v
 Next, we'll need to rename the columns to better reflect what they represent. We can use the pandas.DataFrame.rename() method on dataframes to accomplish this.
 
 The next six columns ask the respondent to rank the Star Wars movies in order of least favorite to most favorite. 1 means the film was the most favorite, and 6 means it was the least favorite. Each of the following columns can contain the value 1, 2, 3, 4, 5, 6, or NaN. Fortunately, these columns don't require a lot of cleanup. We'll need to convert each column to a numeric type, though, then rename the columns so that we can tell what they represent more easily.We can do the numeric conversion with the pandas.DataFrame.astype() method on dataframes.
-
-Now that we've cleaned up the ranking columns, we can find the highest-ranked movie more quickly. To do this, we can take the mean of each of the ranking columns using the pandas.DataFrame.mean() method on dataframes.
 
 
 
