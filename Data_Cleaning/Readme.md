@@ -1,6 +1,6 @@
 In real-world data science, we may not find an ideal data set. The soltion is to aggregate disparate data sources instead, or do a good amount of data cleaning.
 
-FiveThirtyEight website became interested in answering some questions about Star Wars fans. In particular, they wondered: does the rest of America realize that ìThe Empire Strikes Backî is clearly the best of the Star Wars series?
+FiveThirtyEight website became interested in answering some questions about Star Wars fans. In particular, they wondered: does the rest of America realize that ‚ÄúThe Empire Strikes Back‚Äù is clearly the best of the Star Wars series?
 
 The team needed to collect data addressing this question. To do this, they surveyed Star Wars fans using the online tool SurveyMonkey. They received 835 total responses.
 
